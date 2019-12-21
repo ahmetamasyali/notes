@@ -1,0 +1,62 @@
+
+https://training.gokhansengun.com/kube-intro.html
+
+kubectl get nodes -o wide
+
+kubectl run pingpong --image alpine ping 1.1.1.1
+
+stern ping (for logs)
+
+kubectl scale deploy/pingpong --replicas 8
+
+k get deploy
+
+kubectl run httpenv --image=jpetazzo/httpenv --replicas=10
+
+kubectl expose deploy/httpenv --port 8888 --type=NodePort
+K get svc
+
+kubectl apply -f XXX.yaml
+
+k edit svc httpenv
+
+kubectl run registry --image=registry 
+kubectl expose deploy/registry --port=5000 --type=NodePort
+
+kubectl expose deploy/izycrush --type=NodePort --port=8080
+Portforward
+
+Scp -i id_rsa.dms ubuntu@52.169.160.194:/home/ubuntu/.kube/config .
+
+kubectl get deploy -w
+
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
+
+https://hub.helm.sh/
+
+
+helm list --all-namespaces
+
+helm upgrade --install ahmet --version 9.6.1 -n monitoring stable/prometheus \
+     --set server.service.type=NodePort —set alertmanager.persistentVolume.enabled = true
+ \
+     --set server.persistentVolume.enabled=false
+
+Rancher
+Istio
+
+Git clone https://github.com/gokhansengun/troubleshooting-k8s.git
+
+helm upgrade --install worker  -f charts/app/worker-values.yml ./charts/app/
+
+
+helm upgrade --install redis -f charts/app/redis-values.yaml stable/redis
+
+
+${REGISTRY}/worker:${TAG}
+
+helm upgrade --install worker  -f charts/app/worker-values.yml .
+
+helm upgrade --install worker  -f charts/app/worker-values.yml ./charts/app/
+
+helm upgrade --install worker  -f charts/app/vote-values.yaml ./charts/app/
