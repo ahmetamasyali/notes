@@ -1,0 +1,38 @@
+
+https://training.gokhansengun.com/container-intro.html#1
+
+dockerd - dockerdeamon - docker engine- docker server
+
+sudo systemctl status docker
+
+docker ps -a
+
+docker run -it ubuntu
+
+docker image ls
+
+
+docker diff CONTAINER_ID
+
+docker commit CONTAINER_ID
+
+docker run -it XXXXX
+
+docker rm -f -v $(docker ps -aq)
+
+docker run -d  (detached)
+
+docker logs —-tail 10  CONTAINER_ID -f 
+
+docker stop CONTAINER_ID
+
+docker kill CONTAINER_ID
+
+
+
+docker build -t ahmet/figlet:0.99 .
+Docker exec -ti XXXX sh
+
+Nicolaka/netshoot
+
+docker run  --rm -d -p 27017:27017 -v ~/data:/data/db  mongo
